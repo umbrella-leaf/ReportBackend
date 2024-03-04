@@ -1,0 +1,28 @@
+server:
+  port: 8473
+  tomcat:
+    accept-count: 1000
+    max-connections: 2000
+    background-processor-delay: 10s
+    max-swallow-size: 30MB
+    max-http-form-post-size: 0
+    threads:
+      min-spare: 20
+      max: 1000
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
